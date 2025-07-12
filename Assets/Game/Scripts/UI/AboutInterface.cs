@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,18 @@ public class AboutInterface : MonoBehaviour
     private Button _closeButton;
 
     [SerializeField]
+    private TMP_Text _attributionsText;
+    
+    [SerializeField]
     private CanvasGroup _canvasGroup;
+    
+    [SerializeField]
+    private AttributionsConfiguration _attributionsConfiguration;
     
     private void Awake()
     {
         _closeButton.onClick.AddListener(OnClosePressed);
+        _attributionsText.text = _attributionsConfiguration.GetAttributionsString();
     }
 
     private void OnDisable()

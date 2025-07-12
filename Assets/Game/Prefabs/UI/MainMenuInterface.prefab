@@ -735,7 +735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 3100417314173060437}
+  _attributionsText: {fileID: 3718368978105052473}
   _canvasGroup: {fileID: 716387662834572135}
+  _attributionsConfiguration: {fileID: 11400000, guid: d98c4874ba48cbd469ed815dd3920bcb, type: 2}
 --- !u!1 &3669924839482480246
 GameObject:
   m_ObjectHideFlags: 0

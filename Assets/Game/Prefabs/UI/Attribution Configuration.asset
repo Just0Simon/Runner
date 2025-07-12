@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597b2bdae70a014882e46a9bafd24cd, type: 3}
+  m_Name: Attribution Configuration
+  m_EditorClassIdentifier: 
+  <Attributions>k__BackingField:
+  - AssetName: Animated Men Pack
+    AssetLink: https://poly.pizza/bundle/Animated-Men-Pack-DAC9SDgMQT
+    Author: Quaternius
+    AuthorLink: https://poly.pizza/u/Quaternius
+    Licence: 
+    LicenceLink: 
+    Platform: via Poly Pizza
+    Modifications: 
+  - AssetName: Spike Platform
+    AssetLink: https://poly.pizza/m/vBafePBZaf
+    Author: by Quaternius
+    AuthorLink: 
+    Licence: 
+    LicenceLink: 
+    Platform: 
+    Modifications: 
+  - AssetName: Spike Mine
+    AssetLink: https://poly.pizza/m/4VRVeCH1sHm
+    Author: by Aaron Clifford
+    AuthorLink: 
+    Licence: CC-BY
+    LicenceLink: https://creativecommons.org/licenses/by/3.0/
+    Platform: via Poly Pizza
+    Modifications: 
+  - AssetName: Traffic Barrier
+    AssetLink: https://poly.pizza/m/tSd5uiCgR7
+    Author: by Zsky
+    AuthorLink: 
+    Licence: CC-BY
+    LicenceLink: https://creativecommons.org/licenses/by/3.0/
+    Platform: via Poly Pizza
+    Modifications: 
