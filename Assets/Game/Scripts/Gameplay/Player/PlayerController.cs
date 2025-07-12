@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PlayerAnimator _animator;
         
+    private PlayerJumpComponent _playerJumpComponent;
     private PlayerMovementComponent _playerMovementComponent;
     
     private SwipeInputProcessor _swipeInputProcessor;
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        _playerJumpComponent = GetComponent<PlayerJumpComponent>();
         _playerMovementComponent = GetComponent<PlayerMovementComponent>();
     }
 
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void SwipeUp()
     {
+        _playerJumpComponent.Jump();
         _animator.TriggerJump();
     }
 }

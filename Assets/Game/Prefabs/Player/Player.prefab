@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 707717728073522602}
   - component: {fileID: 5033364203712392131}
   - component: {fileID: 5779417167193941547}
-  - component: {fileID: 7997321836315910265}
+  - component: {fileID: 4077379590451326025}
   - component: {fileID: 6552264997928829709}
   - component: {fileID: 2647125946205936609}
   m_Layer: 6
@@ -65,7 +65,7 @@ MonoBehaviour:
   _forwardMoveSpeed: 10
   _strafeSpeed: 6
   _horizontalMoveClamp: {x: -5, y: 5}
---- !u!114 &7997321836315910265
+--- !u!114 &4077379590451326025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,9 +74,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4015700624967902327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08b1353aee47438789da9ba3edea5819, type: 3}
+  m_Script: {fileID: 11500000, guid: 51792b4f17434b0e9d6a072991563608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _jumpForce: 5
+  _gravity: 9.81
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  _groundCheckDistance: 0.1
+  _airborneColliderHeight: 3.5
 --- !u!54 &6552264997928829709
 Rigidbody:
   m_ObjectHideFlags: 0

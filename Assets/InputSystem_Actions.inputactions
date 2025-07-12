@@ -535,6 +535,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1e1e82d3-255d-4b9f-bd79-d30ec26a03fb",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "TouchDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "708d946a-75be-4553-9305-35d27c6a81ea",
                     "path": "<Touchscreen>/Press",
                     "interactions": "",

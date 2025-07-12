@@ -15,7 +15,9 @@ public class GameResultInterface : MonoBehaviour
     private Button _replayButton;
     [SerializeField]
     private CanvasGroup _canvasGroup;
-    
+
+    [SerializeField]
+    private float _showResultsDelay = 1f;
     [SerializeField]
     private float _fadeDuration = 0.2f;
     [SerializeField]
@@ -46,8 +48,15 @@ public class GameResultInterface : MonoBehaviour
     {
         _gameResultText.text = win ? _winMessage : _loseMessage;
         _gameScoreText.text = _gameScoreVariable.Value.ToString();
-        DOTween.To(() => _canvasGroup.alpha, x => _canvasGroup.alpha = x, 1, _fadeDuration)
-            .OnComplete(OnShown);
+        
+        var sequence = DOTween.Sequence();
+
+        sequence.AppendInterval(_showResultsDelay);
+
+        var tween = DOTween.To(() => _canvasGroup.alpha, x => _canvasGroup.alpha = x, 1, _fadeDuration);
+        
+        sequence.Append(tween);
+        sequence.AppendCallback(OnShown);
         
         void OnShown()
         {
