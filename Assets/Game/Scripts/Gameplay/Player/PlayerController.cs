@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         _playerMovementComponent.Move(_strafeInputProcessor.XDelta);
-        _animator.SetSpeed(_playerMovementComponent.CurrentSpeed);
     }
 
     private void OnDestroy()
@@ -32,8 +31,15 @@ public class PlayerController : MonoBehaviour
     {
         _strafeInputProcessor = strafeInputProcessor;
         _swipeInputProcessor = swipeInputProcessor;
-            
+        _animator.SetSpeed(_playerMovementComponent.CurrentSpeed);
+
         _swipeInputProcessor.SwipeUp += SwipeUp;
+    }
+    
+    public void Stop()
+    {
+        _playerMovementComponent.Stop();
+        _animator.SetSpeed(0);
     }
 
     private void SwipeUp()

@@ -18,6 +18,12 @@ public class PlayerMovementComponent : MonoBehaviour
         CurrentSpeed = _forwardMoveSpeed;
     }
     
+    public void Stop()
+    {
+        _forwardMoveSpeed = 0;
+        _strafeSpeed = 0;
+    }
+    
     public void Move(float horizontalDirection)
     {
         // Forward translate
