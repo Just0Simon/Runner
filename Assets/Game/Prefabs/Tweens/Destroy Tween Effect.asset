@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Destroy Tween Effect
   m_EditorClassIdentifier: 
   _scaleInEase: 2
-  _scaleInDuration: 1
+  _scaleInDuration: 0.2
   _scaleInValue: {x: 0, y: 0, z: 0}
   _destroyOnComplete: 1
-  _destroyDelay: 1
+  _destroyDelay: 0.5

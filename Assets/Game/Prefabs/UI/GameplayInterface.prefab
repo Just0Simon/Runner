@@ -271,7 +271,7 @@ MonoBehaviour:
   _menuButton: {fileID: 8860317368772196519}
   _replayButton: {fileID: 8017156780152320714}
   _canvasGroup: {fileID: 4350730473372737258}
-  _fadeDuration: 0.2
+  _fadeDuration: 2
   _winMessage: You win!
   _loseMessage: You lose!
   _gameScoreVariable: {fileID: 11400000, guid: 42b962bff97f9c64a94d0af5f6683c98, type: 2}
