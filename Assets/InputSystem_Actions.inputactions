@@ -524,6 +524,17 @@
                 },
                 {
                     "name": "",
+                    "id": "97467cb8-6c81-47f8-a414-2856765a270f",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "TouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "190d94a0-71d4-4fe5-a437-9d8f387eb9f6",
                     "path": "<Pointer>/delta",
                     "interactions": "",
@@ -551,6 +562,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04bd88f6-5c56-4168-9a36-7eeb27ae2157",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Touch",
                     "isComposite": false,
                     "isPartOfComposite": false
