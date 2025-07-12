@@ -82,7 +82,7 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  _groundCheckDistance: 0.1
+  _groundCheckDistance: 0.2
   _airborneColliderHeight: 3.5
 --- !u!54 &6552264997928829709
 Rigidbody:
