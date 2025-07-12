@@ -53,8 +53,8 @@ This is a simple 3D endless runner game developed in Unity as part of a test ass
 ## Gameplay
 - **Objective**: Collect as many coins as possible while avoiding obstacles.
 - **Controls**:
-  - **A/D or Left/Right Arrow Keys**: Strafe left or right.
-  - **Spacebar**: Jump to avoid obstacles.
+  - **Hold Mouse on screen and drag horizontaly**: Strafe left or right.
+  - **Swipe Up for Jump**: Jump to avoid obstacles.
 - **Game Flow**:
   - Start the game from the main menu by clicking "Start".
   - The player automatically runs forward, collecting coins and avoiding obstacles.
@@ -75,19 +75,5 @@ The project follows a modular design with minimal dependencies:
 1. Go to **Edit > Project Settings > Editor**.
 2. Set **Play Mode** to **Simulation Mode** before pressing the Play button.
 
-## Known Limitations
-- The game is designed for a single level (30–60 seconds). No additional levels are included.
-- Bonus features (particle effects, sounds) may not be fully implemented unless specified.
-- Tested primarily in the Unity Editor; standalone builds may require additional configuration.
-
-## Future Improvements
-- Add multiple levels with increasing difficulty.
-- Implement a high-score system with persistent storage.
-- Enhance visuals with more detailed 3D models and environments.
-- Add more complex obstacle patterns or power-ups.
-
 ## License
 This project is for demonstration purposes only and is not licensed for commercial use.
-
-## Contact
-For questions or feedback, please contact [your-email@example.com] or open an issue on the GitHub repository.
