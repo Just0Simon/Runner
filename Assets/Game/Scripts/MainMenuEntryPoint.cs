@@ -5,12 +5,10 @@ public class MainMenuEntryPoint : MonoBehaviour
     [SerializeField]
     private MainMenuInterface _mainMenuInterfacePrefab;
 
-    private ProjectSceneManager _projectSceneManager;
     private MainMenuInterface _mainMenuInterfaceInstance;
     
     private void Awake()
     {
-        _projectSceneManager = new ProjectSceneManager();
         
         _mainMenuInterfaceInstance = Instantiate(_mainMenuInterfacePrefab);
         _mainMenuInterfaceInstance.PlayPressed += OnPlayPressed;
@@ -19,7 +17,7 @@ public class MainMenuEntryPoint : MonoBehaviour
 
     private void OnPlayPressed()
     {
-        _projectSceneManager.LoadGameplayScene();
+        ProjectSceneManager.LoadGameplayScene();
     }
 
     private void OnExitPressed()

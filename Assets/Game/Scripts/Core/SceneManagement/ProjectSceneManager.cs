@@ -1,13 +1,13 @@
 ﻿using UnityEngine.SceneManagement;
 
-public class ProjectSceneManager
+public static class ProjectSceneManager
 {
-    public void LoadMainMenuScene()
+    public static void LoadMainMenuScene()
     {
         SceneManager.LoadScene(Constants.MainMenuScene);
     }
 
-    public void LoadGameplayScene()
+    public static void LoadGameplayScene()
     {
         SceneManager.LoadScene(Constants.GameplayScene);
     }

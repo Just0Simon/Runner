@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class GameplayEntryPoint : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField]
     private InputActionAsset _inputActionAsset;
     [SerializeField]
@@ -10,19 +11,37 @@ public class GameplayEntryPoint : MonoBehaviour
     [SerializeField]
     private StrafeConfiguration _strafeConfiguration;
     [SerializeField]
-    private PlayerCameraFollow _playerCameraFollow;
+    private IntegerVariableScriptableObject _gameScoreVariable;
     
-    [SerializeField]
-    private PlayerController _playerControllerPrefab;
-    
+    [Header("Scene References")]    
     [SerializeField]
     private Transform _playerSpawnPoint;
+    [SerializeField]
+    private PlayerCameraFollow _playerCameraFollow;
+    
+    [Header("Prefabs")]
+    [SerializeField]
+    private PlayerController _playerControllerPrefab;
+    [SerializeField]
+    private GameplayInterface _gameplayInterfacePrefab;
+    [SerializeField]
+    private GameplayManager _gameplayManagerPrefab;
     
     private InputSystem _inputSystem;
+    private GameplayManager _gameplayManager;
 
     private void Awake()
     {
+        // Clear value of game score in case last gameplay scene leave was unexpected.
+        _gameScoreVariable.Reset();
+        
+        // Setup Gameplay Manager
+        _gameplayManager = Instantiate(_gameplayManagerPrefab);
+        
         SetupInputSystem();
+
+        // Setup Gameplay Interface
+        Instantiate(_gameplayInterfacePrefab);
     }
 
     private void Start()
@@ -33,6 +52,8 @@ public class GameplayEntryPoint : MonoBehaviour
         var playerTransformModel = new PlayerTransformModel(playerController.transform);
         
         _playerCameraFollow.Initialize(playerTransformModel);
+        
+        _gameplayManager.Initialize(playerController);
     }
 
     private void SetupInputSystem()
