@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,5 +69,10 @@ public class GameplayEntryPoint : MonoBehaviour
         
         IStrafeInputProcessor strafeInputProcessor = new StrafeInputProcessor(_strafeConfiguration, touchInputProcessor);
         _inputSystem.AddProcessor(strafeInputProcessor);
+    }
+
+    private void OnDestroy()
+    { 
+        _inputSystem?.Dispose();
     }
 }
