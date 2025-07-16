@@ -3,11 +3,8 @@
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
-    private const string JUMP_KEY = "Jump";
-    private const string SPEED_KEY = "Speed";
-    
-    private readonly int _jumpKeyHash = Animator.StringToHash(JUMP_KEY);
-    private readonly int _speedKeyHash = Animator.StringToHash(SPEED_KEY);
+    private readonly int _jumpKeyHash = Animator.StringToHash(Constants.JUMP_KEY);
+    private readonly int _speedKeyHash = Animator.StringToHash(Constants.SPEED_KEY);
     
     private Animator _animator;
 
