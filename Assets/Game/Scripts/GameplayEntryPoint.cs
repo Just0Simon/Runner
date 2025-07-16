@@ -60,13 +60,13 @@ public class GameplayEntryPoint : MonoBehaviour
     {
         _inputSystem = new InputSystem(_inputActionAsset);
 
-        var touchInputProcessor = new TouchInputProcessor();
+        ITouchInputProcessor touchInputProcessor = new TouchInputProcessor();
         _inputSystem.AddProcessor(touchInputProcessor);
         
-        var swipeDetector = new SwipeInputProcessor(_swipeConfiguration, touchInputProcessor);
+        ISwipeInputProcessor swipeDetector = new SwipeInputProcessor(_swipeConfiguration, touchInputProcessor);
         _inputSystem.AddProcessor(swipeDetector);
         
-        var strafeInputProcessor = new StrafeInputProcessor(_strafeConfiguration, touchInputProcessor);
+        IStrafeInputProcessor strafeInputProcessor = new StrafeInputProcessor(_strafeConfiguration, touchInputProcessor);
         _inputSystem.AddProcessor(strafeInputProcessor);
     }
 }

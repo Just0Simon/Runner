@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TouchInputProcessor : InputProcessor
+public class TouchInputProcessor : InputProcessor, ITouchInputProcessor
 {
     public bool IsTouching { get; private set; }
     

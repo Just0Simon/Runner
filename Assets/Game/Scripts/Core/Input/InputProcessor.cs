@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.InputSystem;
 
-public abstract class InputProcessor : IDisposable
+public abstract class InputProcessor : IInputProcessor
 {
     protected InputActionAsset ActionAsset;
 

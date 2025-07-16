@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     private PlayerJumpComponent _playerJumpComponent;
     private PlayerMovementComponent _playerMovementComponent;
     
-    private SwipeInputProcessor _swipeInputProcessor;
-    private StrafeInputProcessor _strafeInputProcessor;
+    private ISwipeInputProcessor _swipeInputProcessor;
+    private IStrafeInputProcessor _strafeInputProcessor;
 
     private void Awake()
     {
@@ -26,16 +26,16 @@ public class PlayerController : MonoBehaviour
     private void OnDestroy()
     {
         if(_swipeInputProcessor != null)
-            _swipeInputProcessor.SwipeUp -= SwipeUp;
+            _swipeInputProcessor.Swipe -= Swipe;
     }
         
-    public void Initialize(SwipeInputProcessor swipeInputProcessor, StrafeInputProcessor strafeInputProcessor)
+    public void Initialize(ISwipeInputProcessor swipeInputProcessor, IStrafeInputProcessor strafeInputProcessor)
     {
         _strafeInputProcessor = strafeInputProcessor;
         _swipeInputProcessor = swipeInputProcessor;
         _animator.SetSpeed(_playerMovementComponent.CurrentSpeed);
 
-        _swipeInputProcessor.SwipeUp += SwipeUp;
+        _swipeInputProcessor.Swipe += Swipe;
     }
     
     public void Stop()
@@ -44,8 +44,11 @@ public class PlayerController : MonoBehaviour
         _animator.SetSpeed(0);
     }
 
-    private void SwipeUp()
+    private void Swipe(ISwipeInputProcessor.SwipeDirection swipeDirection)
     {
+        if(swipeDirection != ISwipeInputProcessor.SwipeDirection.Up)
+            return;
+        
         _playerJumpComponent.Jump();
         _animator.TriggerJump();
     }

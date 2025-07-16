@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwipeInputProcessor : InputProcessor
+public class SwipeInputProcessor : InputProcessor, ISwipeInputProcessor
 {
-    public event System.Action SwipeUp;
+    public event System.Action<ISwipeInputProcessor.SwipeDirection> Swipe;
     
     private Vector2 _touchStartPos;
     private bool _isTouching;
@@ -11,9 +11,9 @@ public class SwipeInputProcessor : InputProcessor
 
     private readonly SwipeConfiguration _configuration;
 
-    private readonly TouchInputProcessor _touchInputProcessor;
+    private readonly ITouchInputProcessor _touchInputProcessor;
 
-    public SwipeInputProcessor(SwipeConfiguration configuration, TouchInputProcessor touchInputProcessor)
+    public SwipeInputProcessor(SwipeConfiguration configuration, ITouchInputProcessor touchInputProcessor)
     {
         _touchInputProcessor = touchInputProcessor;
         _configuration = configuration;
@@ -50,9 +50,29 @@ public class SwipeInputProcessor : InputProcessor
                 return;
             
             swipeVector.Normalize();
-            if (Vector2.Dot(swipeVector, Vector2.up) > _configuration.SwipeDirectionMatchThreshold)
+            var upDirectionDotProduct = Vector2.Dot(swipeVector, Vector2.up);
+            
+            if (upDirectionDotProduct > _configuration.SwipeDirectionMatchThreshold)
             {
-                SwipeUp?.Invoke();
+                Swipe?.Invoke(ISwipeInputProcessor.SwipeDirection.Up);
+            }
+            
+            var downDirectionDotProduct = Vector2.Dot(swipeVector, Vector2.down);
+            if (downDirectionDotProduct > _configuration.SwipeDirectionMatchThreshold)
+            {
+                Swipe?.Invoke(ISwipeInputProcessor.SwipeDirection.Down);
+            }
+            
+            var rightDirectionDotProduct = Vector2.Dot(swipeVector, Vector2.right);
+            if (rightDirectionDotProduct > _configuration.SwipeDirectionMatchThreshold)
+            {
+                Swipe?.Invoke(ISwipeInputProcessor.SwipeDirection.Right);
+            }
+            
+            var leftDirectionDotProduct = Vector2.Dot(swipeVector, Vector2.left);
+            if (leftDirectionDotProduct > _configuration.SwipeDirectionMatchThreshold)
+            {
+                Swipe?.Invoke(ISwipeInputProcessor.SwipeDirection.Left);
             }
         }
         _isTouching = false;

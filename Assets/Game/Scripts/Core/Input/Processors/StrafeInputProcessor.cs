@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class StrafeInputProcessor : InputProcessor
+public class StrafeInputProcessor : InputProcessor, IStrafeInputProcessor
 {
     public float XDelta { get; private set; }
     
-    private readonly TouchInputProcessor _touchInputProcessor;
+    private readonly ITouchInputProcessor _touchInputProcessor;
     private readonly StrafeConfiguration _configuration;
 
     private int _currentDirection;
     private Vector2 _touchStartPosition;
     
-    public StrafeInputProcessor(StrafeConfiguration configuration, TouchInputProcessor touchInputProcessor)
+    public StrafeInputProcessor(StrafeConfiguration configuration, ITouchInputProcessor touchInputProcessor)
     {
         _configuration = configuration;
         _touchInputProcessor = touchInputProcessor;
