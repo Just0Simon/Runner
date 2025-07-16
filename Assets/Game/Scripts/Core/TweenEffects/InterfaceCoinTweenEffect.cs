@@ -5,9 +5,6 @@ using UnityEngine;
     fileName = "New Interface Coin Tween Effect", order = 2)]
 public class InterfaceCoinTweenEffect : AbstractTweenEffect
 {
-    [Header("Works only for RectTransforms")]
-    public bool _readHeader;
-
     [Header("Stage 1: Fly towards target")]
     [SerializeField]
     private float _stageOneDuration;
@@ -29,8 +26,7 @@ public class InterfaceCoinTweenEffect : AbstractTweenEffect
     
     public override void Apply(Transform transform)
     {
-        var rectTransform = transform as RectTransform;
-        if (rectTransform is null)
+        if (transform is not RectTransform rectTransform)
         {
             Debug.LogError("Target transform is not a RectTransform");
             return;
