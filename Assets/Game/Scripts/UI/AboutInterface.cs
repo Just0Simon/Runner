@@ -25,7 +25,7 @@ public class AboutInterface : MonoBehaviour
         _attributionsText.text = _attributionsConfiguration.GetAttributionsString();
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _closeButton.onClick.RemoveAllListeners();
     }
